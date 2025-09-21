@@ -11,3 +11,9 @@ This repository is a personal project designed to help me learn and test my skil
 - Comprehensive SQL queries to analyze pharmaceutical data.
 - Exploration of industry trends and patterns using data-driven approaches.
 - Hands-on practice with real-world data scenarios.
+  
+## License
+This repository is for educational purposes.
+
+## Author
+[Bmrinal2](https://github.com/Bmrinal2)
