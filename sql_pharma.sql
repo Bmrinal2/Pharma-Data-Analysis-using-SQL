@@ -1,25 +1,25 @@
 --1).Retrieve all columns for all records in the dataset.
-select * from sales
+select * from sales;
 
 --2).How many unique countries are represented in the dataset?
-select count(distinct country) from sales
+select count(distinct country) from sales;
 
 --3)Select the names of all the customers on the 'Retail' channel.
 select customername from sales
-where subchannel = 'Retail'
+where subchannel = 'Retail';
 
 --4).Find the total quantity sold for the ' Antibiotics' product class
 select productclass,sum(quantity)
 from sales
 where productclass = 'Antibiotics'
-group BY productclass
+group BY productclass;
 
 --5).List all the distinct months present in the dataset.
-select distinct month from sales
+select distinct month from sales;
 
 --6).Calculate the total sales for each year.
 select year,sum(sales) from sales
-group by year
+group by year;
 
 --7).Find the customer with the highest sales value.
 select customername,sum(sales) as Total_sales
@@ -42,24 +42,24 @@ limit 5;
 --10).Calculate the average price of products in each sub-channel.
 select subchannel,avg(price) as avg_price
 from sales
-group by subchannel
+group by subchannel;
 
 --11).Join the 'Employees' table with the 'Sales' table to get the name of the Sales Rep and the corresponding sales records.
 
 --Note:There is only one table in the given dataset, so can't perform join operation
 select salesrepname,sum(sales)
 from sales
-group BY salesrepname
+group BY salesrepname;
 
 --12).Retrieve all sales made by employees from ' Rendsburg ' in the year 2018.
 select * from sales
-where city = 'Rendsburg' and year = 2018
+where city = 'Rendsburg' and year = 2018;
 
 --13).Calculate the total sales for each product class, for each month, and order the results by year, month, and product class.
 select productclass,month,sum(sales) as Total_sales
 from sales
 group by year,month,productclass
-order BY year,month,productclass
+order BY year,month,productclass;
 
 --14).Find the top 3 sales reps with the highest sales in 2019.
 select salesrepname,sum(sales) as Total_sales from sales
@@ -89,7 +89,7 @@ from average_monthly_sales
 --sold for each product class.
 select productclass,sum(sales) as Total_sales,avg(price) as Average_Price,sum(quantity) as Total_quantity
 from sales
-group by productclass
+group by productclass;
 
 --17).Find the top 5 customers with the highest sales for each year.
 with ranked_customer as 
@@ -160,6 +160,7 @@ select subchannel,country,Total_sales
 from ranked_subchannel_sales
 where sales_rank = 1
 ORDER BY subchannels
+
 
 
 
